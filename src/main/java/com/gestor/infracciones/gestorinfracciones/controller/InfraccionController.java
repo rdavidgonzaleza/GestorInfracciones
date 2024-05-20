@@ -9,7 +9,6 @@ import com.gestor.infracciones.gestorinfracciones.entity.Infraccion;
 import com.gestor.infracciones.gestorinfracciones.service.InfraccionService;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -30,11 +29,6 @@ public class InfraccionController {
     @GetMapping("/infracciones")
     public List<Infraccion> findInfracciones() {
         return service.getInfraccion();
-    }
-    
-    @DeleteMapping("/delete/{id}")
-    public void deleteInfraccion(@PathVariable int id){
-        service.deleteInfraccion(id);
     }
 
     @PutMapping("updateInfraccion/{id}")

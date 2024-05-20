@@ -23,11 +23,6 @@ public class InfraccionService {
     }
 
     @Autowired
-    public void deleteInfraccion(int id){
-        repository.deleteById(id);
-    }
-
-    @Autowired
     public Infraccion updateInfraccion(Infraccion infraccion){
         Infraccion existingInfraccion = repository.findById(infraccion.getInfraccionId()).orElse(null);
         if (existingInfraccion!=null) {
