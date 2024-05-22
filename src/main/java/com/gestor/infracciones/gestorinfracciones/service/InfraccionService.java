@@ -26,16 +26,9 @@ public class InfraccionService {
     public Infraccion updateInfraccion(Infraccion infraccion){
         Infraccion existingInfraccion = repository.findById(infraccion.getInfraccionId()).orElse(null);
         if (existingInfraccion!=null) {
-            existingInfraccion.setDireccion(infraccion.getDireccion());
             existingInfraccion.setEstado(infraccion.getEstado());
-            existingInfraccion.setFechaAsignacion(infraccion.getFechaAsignacion());
             existingInfraccion.setFechaLimitePago(infraccion.getFechaLimitePago());
-            existingInfraccion.setMotivoInfraccion(infraccion.getMotivoInfraccion());
-            existingInfraccion.setValorInfraccion(infraccion.getValorInfraccion());
             existingInfraccion.setPagos(infraccion.getPagos());
-            existingInfraccion.setInfractorId(infraccion.getInfractorId());
-            existingInfraccion.setUrlEvidencia(infraccion.getUrlEvidencia());
-
             return repository.save(existingInfraccion);
         }
         return null;
