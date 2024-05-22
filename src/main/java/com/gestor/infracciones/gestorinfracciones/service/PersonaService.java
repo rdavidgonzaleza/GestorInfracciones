@@ -18,25 +18,12 @@ public class PersonaService {
     }
 
     @Autowired
-    public Persona savePersona(Persona persona){
-        return repository.save(persona);
-    }
-
-    @Autowired
-    public void deletePersona(int id){
-        repository.deleteById(id);   
-    }
-
-    @Autowired
     public Persona updatePersona(Persona persona){
         Persona existingPersona = repository.findById(persona.getDocumento()).orElse(null);
         if(existingPersona!=null){
-            existingPersona.setTipoDocumento(persona.getTipoDocumento());
-            existingPersona.setNombres(persona.getNombres());
-            existingPersona.setApellidos(persona.getApellidos());
             existingPersona.setTelefono(persona.getTelefono());
             existingPersona.setCorreo(persona.getCorreo());
-            existingPersona.setFechaNacimiento(persona.getFechaNacimiento());
+            existingPersona.setDireccion(persona.getDireccion());
             return repository.save(existingPersona);
         }
         return null;
