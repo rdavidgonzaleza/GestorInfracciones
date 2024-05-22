@@ -32,7 +32,7 @@ public class InfraccionController {
     }
 
     @PutMapping("updateInfraccion/{id}")
-    public Infraccion updateInfraccion(@PathVariable int id, @RequestBody Infraccion infraccion) {
+       public Infraccion updateInfraccion(@PathVariable int id, @RequestBody Infraccion infraccion) {
         
         return service.updateInfraccion(infraccion);
     }
